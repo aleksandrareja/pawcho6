@@ -24,7 +24,7 @@ LABEL org.opencontainers.image.source=https://github.com/aleksandrareja/pawcho6
 LABEL org.opencontainers.image.description="Obraz do Laboratorium 6 - zadanie nieobowiazkowe"
 LABEL org.opencontainers.image.authors="Aleksandra Reja"
 
-COPY --from=builder /build/index.html /docker-entrypoint.d/generate-index.sh
+COPY --from=builder /build/index.sh /docker-entrypoint.d/generate-index.sh
 
 #uruchomienie budowy aplikacji – wygenerowanie pliku index.html z danymi serwera
 RUN chmod +x /docker-entrypoint.d/generate-index.sh && /docker-entrypoint.d/generate-index.sh
